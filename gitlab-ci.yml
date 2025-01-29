@@ -1,0 +1,19 @@
+image: maven:3.9.6
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - .m2/repository/
+
+build_job:
+  stage: build
+  script:
+    - mvn compile
+
+test_job:
+  stage: test
+  script:
+    - mvn test
